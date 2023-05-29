@@ -1,0 +1,9 @@
+model created using code in collab (in gowdas drive)
+loaded the model in model.h5 format in models folder
+run the app.py preferably in vscode (change all the paths)
+
+steps for using the website
+
+upload the pis in IR format 
+predict using the models predict option 
+reload to erase the pre existing data

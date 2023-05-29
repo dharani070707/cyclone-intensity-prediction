@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>CycloNiP</title>
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;400;700&display=swap" rel="stylesheet">
+
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../static/css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="../static/css/style.css" rel="stylesheet">
+
+    <!--
+
+TemplateMo 583 Festava Live
+
+https://templatemo.com/tm-583-festava-live
+
+-->
+</head>
+
+<body>
+
+    <main>
+
+        <header class="site-header">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-12 col-12 d-flex flex-wrap">
+                        <p class="d-flex me-4 mb-0">
+                            <!-- <i class="bi-person custom-icon me-2"></i> -->
+                            <strong class="text-dark">Deep Learning based Cyclone Intensity Estimation Using INSAT 3D IR Imagery</strong>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    CycloNiP
+                </a>
+
+               <!-- <a href="https://mosdac.gov.in/gallery/index.html?&prod=3DIMG_*_L1C_ASIA_MER_BIMG_V*.jpg&date=2023-03-04&count=8" class="btn custom-btn d-lg-none ms-auto me-4">Live Satellite</a> -->
+               <a href="#predict" class="btn custom-btn d-lg-none ms-auto me-4">Predict</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_2">INSAT 3D</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_3">Dataset</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_4">Methodology</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_5">Resources</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                        </li>
+                    </ul>
+
+                    <a href="#predict" class="btn custom-btn d-lg-block d-none">Predict</a>
+                </div>
+            </div>
+        </nav>
+
+
+        <section class="hero-section" id="section_1">
+            <div class="section-overlay"></div>
+
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="row">
+
+                    <div class="col-12 mt-auto mb-5 text-center">
+                        <small>Cyclone</small>
+
+                        <h1 class="text-white mb-5">Intensity Estimation</h1>
+
+                        <a class="btn custom-btn smoothscroll" href="#section_2">Explore</a>
+                    </div>
+
+                    <!--<div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
+                        <div class="date-wrap">
+                            <h5 class="text-white">
+                                <i class="custom-icon bi-clock me-2"></i>
+                                10 - 12<sup>th</sup>, Dec 2023
+                            </h5>
+                        </div>
+
+                        <div class="location-wrap mx-auto py-3 py-lg-0">
+                            <h5 class="text-white">
+                                <i class="custom-icon bi-geo-alt me-2"></i>
+                                National Center, United States
+                            </h5>
+                        </div>
+
+                        <div class="social-share">
+                            <ul class="social-icon d-flex align-items-center justify-content-center">
+                                <span class="text-white me-3">Share:</span>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-facebook"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-twitter"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-instagram"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="../static/video/satellite.mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+
+        <section class="about-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
+                        <div class="services-info">
+                            <h2 class="text-white mb-4">About INSAT 3D satellite</h2>
+
+                            <p class="text-white">INSAT-3D is an advanced weather satellite of India configured with improved Imaging System and Atmospheric Sounder. INSAT-3D is designed for enhanced meteorological observations, monitoring of land and ocean surfaces, generating vertical profile of the atmosphere in terms of temperature and humidity for weather forecasting and disaster warning..</p>
+
+                            <h6 class="text-white mt-4">Orbit Type</h6>
+
+                            <p class="text-white">GSO (Geosynchronous Orbit)</p>
+
+                            <h6 class="text-white mt-4">Application</h6>
+
+                            <p class="text-white">Climate & Environment | Disaster Management </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="about-text-wrap">
+                            <img src="../static/images/insat3d.jpg" class="about-image img-fluid">
+
+                            <div class="about-text-info d-flex">
+                                <!--<div class="d-flex">
+                                    <i class="about-text-icon bi-person"></i>
+                                </div>-->
+
+
+                                <div class="ms-4">
+                                    <h3>INSAT 3D</h3>
+
+                                    <p class="mb-0">Imager | Sounder</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="artists-section section-padding" id="section_3">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">MOSDAC Images</h1>
+                    </div>
+
+                    <div class="col-lg-5 col-12">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="../static/images/insat1.jpeg"
+                                    class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>Sat:</strong>
+                                    INSAT 3D 
+                                </p>
+
+                                <p>
+                                    <strong>Img:</strong>
+                                    TIR1
+                                </p>
+
+                                <p>
+                                    <strong>Type:</strong>
+                                    L1B Full Disc
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>Source:</strong>
+                                    <a href="https://mosdac.gov.in/catalog/satellite.php">mosdac.gov.in</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 col-12">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="../static/images/insat2.jpeg"
+                                    class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>Sat:</strong>
+                                    INSAT 3D 
+                                </p>
+
+                                <p>
+                                    <strong>Img:</strong>
+                                    VIS
+                                </p>
+
+                                <p>
+                                    <strong>Type:</strong>
+                                    L1B Full Disc
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>Source:</strong>
+                                    <a href="https://mosdac.gov.in/catalog/satellite.php">mosdac.gov.in</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="artists-thumb">
+                            <img src="../static/images/insat3.jpeg"
+                                class="artists-image img-fluid">
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>Sat:</strong>
+                                    INSAT 3D 
+                                </p>
+
+                                <p>
+                                    <strong>Img:</strong>
+                                    TIR1 Wind
+                                </p>
+
+                                <p>
+                                    <strong>Type:</strong>
+                                    L2P IRW
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>Source:</strong>
+                                    <a href="https://mosdac.gov.in/catalog/satellite.php">mosdac.gov.in</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="schedule-section section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h2 class="text-white mb-4">Methodology</h1>
+                        	<div class="flow-chart">
+                        		<img alt="Flow" height="450px" width="450px" src="../static/images/methodology1p.png" />
+                        	</div>
+
+                            <!--<div class="table-responsive">
+                                <table class="schedule-table table table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Step</th>
+
+                                            <th scope="col">Wednesday</th>
+
+                                            <th scope="col">Thursday</th>
+
+                                            <th scope="col">Friday</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Day 1</th>
+
+                                            <td class="table-background-image-wrap pop-background-image">
+                                                <h3>Pop Night</h3>
+
+                                                <p class="mb-2">5:00 - 7:00 PM</p>
+
+                                                <p>By Adele</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #F3DCD4"></td>
+
+                                            <td class="table-background-image-wrap rock-background-image">
+                                                <h3>Rock & Roll</h3>
+
+                                                <p class="mb-2">7:00 - 11:00 PM</p>
+
+                                                <p>By Rihana</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Day 2</th>
+
+                                            <td style="background-color: #ECC9C7"></td>
+
+                                            <td>
+                                                <h3>DJ Night</h3>
+
+                                                <p class="mb-2">6:30 - 9:30 PM</p>
+
+                                                <p>By Rihana</p>
+                                            </td>
+
+                                            <td style="background-color: #D9E3DA"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Day 3</th>
+
+                                            <td class="table-background-image-wrap country-background-image">
+                                                <h3>Country Music</h3>
+
+                                                <p class="mb-2">4:30 - 7:30 PM</p>
+
+                                                <p>By Rihana</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #D1CFC0"></td>
+
+                                            <td>
+                                                <h3>Free Styles</h3>
+
+                                                <p class="mb-2">6:00 - 10:00 PM</p>
+
+                                                <p>By Members</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="pricing-section section-padding section-bg" id="section_5">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="text-center mb-4">Useful Links</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="pricing-thumb">
+                            <div class="d-flex">
+                                <div>
+                                    <h3><small>MOSDAC</small> </h3>
+
+                                    <p>Meteorological & Oceanographic Satellite Data Archival Centre<p><small> Space Applications Centre, ISRO</small></p></p>
+                                </div>
+
+                                
+                            </div>
+
+                            <ul class="pricing-list mt-3">
+                                <li class="pricing-list-item">Satellite Images</li>
+
+                                <li class="pricing-list-item">Radar</li>
+
+                                <li class="pricing-list-item">OceanState</li>
+
+                                
+                            </ul>
+
+                            <a class="link-fx-1 color-contrast-higher mt-4" href="https://www.mosdac.gov.in/">
+                                <span>Visit</span>
+                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="16" cy="16" r="15.5"></circle>
+                                        <line x1="10" y1="18" x2="16" y2="12"></line>
+                                        <line x1="16" y1="12" x2="22" y2="18"></line>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12 mt-4 mt-lg-0">
+                        <div class="pricing-thumb">
+                            <div class="d-flex">
+                                <div>
+                                    <h3><small>IMD</small></h3>
+
+                                    <p>India Meteorological Department</p>
+                                    <p>Ministry Of Earth Sciences, GoI</p>
+                                </div>
+                            </div>
+
+                            <ul class="pricing-list mt-3">
+                                <li class="pricing-list-item">CURRENT WEATHER</li>
+
+                                <li class="pricing-list-item">Lightning</li>
+
+                                <li class="pricing-list-item">Weather outlook</li>
+
+                                <li class="pricing-list-item">Warnings</li>
+
+                                <li class="pricing-list-item">RADAR</li>
+
+                   
+                            </ul>
+
+                            <a class="link-fx-1 color-contrast-higher mt-4" href="https://mausam.imd.gov.in/">
+                                <span>Visit</span>
+                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="16" cy="16" r="15.5"></circle>
+                                        <line x1="10" y1="18" x2="16" y2="12"></line>
+                                        <line x1="16" y1="12" x2="22" y2="18"></line>
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact-section section-padding" id="section_6">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="text-center mb-4">Wanna talk!?</h2>
+
+                        <nav class="d-flex justify-content-center">
+                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
+                                role="tablist">
+                                <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactForm" type="button" role="tab"
+                                    aria-controls="nav-ContactForm" aria-selected="false">
+                                    <h5>Contact Form</h5>
+                                </button>
+
+                                <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactMap" type="button" role="tab"
+                                    aria-controls="nav-ContactMap" aria-selected="false">
+                                    <h5>Google Maps</h5>
+                                </button>
+                            </div>
+                        </nav>
+
+                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
+                                aria-labelledby="nav-ContactForm-tab">
+                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
+                                    role="form">
+                                    <div class="contact-form-body">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="text" name="contact-name" id="contact-name"
+                                                    class="form-control" placeholder="Full name" required>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="email" name="contact-email" id="contact-email"
+                                                    pattern="[^ @]*@[^ @]*" class="form-control"
+                                                    placeholder="Email address" required>
+                                            </div>
+                                        </div>
+
+                                        <input type="text" name="contact-company" id="contact-company"
+                                            class="form-control" placeholder="Reason" required>
+
+                                        <textarea name="contact-message" rows="3" class="form-control"
+                                            id="contact-message" placeholder="Message"></textarea>
+
+                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                            <button type="submit" class="form-control">Send message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
+                                aria-labelledby="nav-ContactMap-tab">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.2801700929717!2d77.5118414143031!3d12.825163521545868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae41057dd66abf%3A0xfda823a3ca1775ea!2sDayananda%20Sagar%20Academy%20of%20Technology%20and%20Management%20(DSATM)!5e0!3m2!1sen!2sin!4v1677937001522!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="predict" >
+                <h1>Prediction</h1>
+
+        <section class="upload-file">
+            <h3>Upload File</h3>
+            <form action="{{ url_for('submit')}}" method="POST" enctype="multipart/form-data">
+                <label for="file-upload">Choose file to upload:</label>
+                <input type="file"  name="file">
+                <input type = "submit" value="Upload">
+            </form>
+        </section>
+        <section class="output" data-aos="fade-up">
+            <br><h3>Output</h3>
+                <form action="{{ url_for('predict')}}" method="POST" enctype="multipart/form-data">
+                    <input type="submit", value="predict">
+                </form><br>
+                <div class="result-box">
+                <h2>Result</h2>
+                <span id="result"></span>
+                <h2>{{prediction_text}}</h2> 
+                <h2>{{knot_value}}</h2> 
+            </div>
+            <div>
+                <form action="{{ url_for('reload')}}" method="POST" enctype="multipart/form-data">
+                    <input type="submit", value="Reload">
+                </form><br>
+                </div>        
+                </div>
+            </div>
+        </section> 
+
+
+    </main>
+
+
+
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12">
+                        <h2 class="text-white mb-lg-0">CycloNiP</h2>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <!--<li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-apple"></span>
+                                </a>
+                            </li>-->
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-pinterest"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3"></h5>
+
+                   <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Back to Top</a>
+                        </li>
+
+                       <!--  <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">INSAT 3D</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Dataset</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Methodology</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Resources</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#" class="site-footer-link">Contact</a>
+                        </li>
+                    </ul>-->
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 090-080-0760" class="site-footer-link">
+                            +91-9911223344
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:hello@company.com" class="site-footer-link">
+                            admin@cyclonip.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        ISE, DSATM, Bengaluru</p>
+
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                        <span>Our Maps</span>
+                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="16" cy="16" r="15.5"></circle>
+                                <line x1="10" y1="18" x2="16" y2="12"></line>
+                                <line x1="16" y1="12" x2="22" y2="18"></line>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+            </div>
+        </div>
+
+    </section> <!-- end predict -->
+
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mt-5">
+                        <p class="copyright-text">Copyright © 2023 CycloNip</p>
+                        
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Privacy Policy</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Your Feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+    <script src="../static/js/jquery.sticky.js"></script>
+    <script src="../static/js/click-scroll.js"></script>
+    <script src="../static/js/custom.js"></script>
+
+</body>
+
+</html>

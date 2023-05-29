@@ -10,3 +10,5 @@ numpy==1.24.2
 pycparser==2.21
 soundfile==0.12.1
 Werkzeug==2.2.3
+download insat3d dataset from kaggle and also trained model not included in this folder
+
